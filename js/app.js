@@ -37,7 +37,7 @@ var Player = function(x, y) {
 
 Player.prototype.update = function() {
    
-    this.collosionOccurenceCheck();
+    this.collisionOccurred();
     this.distanceCheck();
 };
 
@@ -87,11 +87,8 @@ Player.prototype.Restart = function() {
     this.y = 320;
 };
 
-Player.prototype.gameUp = function() {
-        this.Restart();
-};
 
-Player.prototype.collosionOccurenceCheck = function() {
+Player.prototype.collisionOccurred = function() {
     for (var i = 0; i < allBugs.length; i++) {
         if (this.x < allBugs[i].x + 75 && this.x + 65 > allBugs[i].x && this.y < allBugs[i].y + 50 && 70 + this.y > allBugs[i].y) {
             noOfGamesLost++;
