@@ -14,10 +14,7 @@
  * a little simpler to work with.
  */
 var Engine = (function(global) {
-    /* Predefine the variables we'll be using within this scope,
-     * create the canvas element, grab the 2D context for that canvas
-     * set the canvas elements height/width and add it to the DOM.
-     */
+   
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
@@ -28,9 +25,7 @@ var Engine = (function(global) {
     canvas.height = 700;
     doc.body.appendChild(canvas);
 
-    /* This function serves as the kickoff point for the game loop itself
-     * and handles properly calling the update and render methods.
-     */
+   
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -41,10 +36,6 @@ var Engine = (function(global) {
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
 
-
-        /* Call our update/render functions, pass along the time delta to
-         * our update function since it may be used for smooth animation.
-         */      
             update(dt);
             render();
         
@@ -81,13 +72,7 @@ var Engine = (function(global) {
         updateEntities(dt);
     }
 
-    /* This is called by the update function and loops through all of the
-     * objects within your allBugs array as defined in app.js and calls
-     * their update() methods. It will then call the update function for your
-     * player object. These update methods should focus purely on updating
-     * the data/properties related to the object. Do your drawing in your
-     * render methods.
-     */
+  
     function updateEntities(dt) {
         allBugs.forEach(function(enemy) {
             enemy.update(dt);
