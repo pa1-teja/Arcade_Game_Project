@@ -1,0 +1,22 @@
+body {
+    background: #0000ff;
+    text-align: center;
+}
+
+.game_status {
+    width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+     display: inline-block;
+}
+
+.games_won,
+.games_lost{
+    font-size: 2em;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 2px 2px 6px black;
+    width: 30%;
+    display: inline-block;
+
+}
